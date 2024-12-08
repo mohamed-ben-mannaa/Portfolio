@@ -28,4 +28,6 @@ window.addEventListener('scroll', function () {
 	const header = document.querySelector('#header .header');
 	header.style.backgroundColor = 'black'; // Always force black
   });
+
+  
   

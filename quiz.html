@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Quiz - Mohamed Ben Mannaa</title>
+  <style>
+
+    .quiz-container {
+      max-width: 700px;
+      height: 300px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin-top: 150px;
+    }
+
+    .question {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+    }
+
+    .options label {
+      display: block;
+      font-size: 1.5rem;
+      margin: 30px 0;
+      margin-left: 15px;
+    }
+
+    .next-btn {
+      padding: 10px 20px;
+      background-color: crimson;
+      color: white;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .next-btn:hover {
+      background-color: #990606;
+    }
+
+    .try-again-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .try-again-btn:hover {
+      background-color: #218838;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 1.7rem;
+      font-weight: bold;
+    }
+
+    .emoji {
+      font-size: 2rem;
+    }
+    .dropdown {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      font-size: 1.2rem;
+      display: none;
+    }
+
+    .dropdown option {
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="index.html">
+            <h1><span>M</span>ohamed <span>Ben </span>Mannaa</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="index.html" data-after="Home">Home</a></li>
+            <li><a href="course.html" data-after="Course">Course</a></li>
+            <li><a href="skills.html" data-after="Course">Skills</a></li>
+            <li><a href="about.html" data-after="About">About</a></li>
+            <li><a href="contact.html" data-after="Contact">Contact</a></li>
+            <li><a href="experience.html" data-after="Contact">Experience</a></li>
+            <li><a href="quiz.html" data-after="Contact">Quiz</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div>
+    <h1 class="section-title" style="margin-top: 80px;margin-bottom: -120px;">Qui<span>z</span></h1>
+  </div>
+  <div class="quiz-container">
+    <div id="question-container">
+      <p class="question"></p>
+      <div class="options"></div>
+    </div>
+    <button id="next-btn" class="next-btn">Next</button>
+    <select id="feedback-dropdown" class="dropdown"></select>
+    <div id="result" class="result" style="display: none;"></div>
+    <button id="try-again-btn" class="try-again-btn" style="display: none;">Try Again</button>
+  </div>
+
+
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1><span>M</span>ohamed <span>Ben</span> Mannaa</h1>
+      </div>
+      <h2>Your Complete Web Solution</h2>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/behance.png" /></a>
+        </div>
+      </div>
+      <p>Copyright © 2024 . All rights reserved</p>
+    </div>
+  </section>
+
+  <script>
+  const questions = [
+      { text: "Que signifie HTML ?", options: ["HyperText Markup Language", "Hyperlink Markup Language", "Home Tool Markup Language"], correct: "HyperText Markup Language" },
+      { text: "Quel langage est principalement utilisé pour le développement côté client ?", options: ["JavaScript", "PHP", "Python"], correct: "JavaScript" },
+      { text: "Quelle commande permet de vérifier la connectivité réseau ?", options: ["ping", "ipconfig", "ssh"], correct: "ping" },
+      { text: "Quelle est la taille maximale d'une adresse IPv4 ?", options: ["32 bits", "64 bits", "128 bits"], correct: "32 bits" },
+      { text: "Quel est le système d'exploitation utilisé pour développer Android ?", options: ["Linux", "Windows", "macOS"], correct: "Linux" },
+      { text: "Quelle est la complexité de recherche dans un tableau trié avec recherche binaire ?", options: ["O(log n)", "O(n)", "O(n^2)"], correct: "O(log n)" },
+      { text: "Quelle est la commande pour cloner un dépôt Git ?", options: ["git clone", "git pull", "git init"], correct: "git clone" },
+      { text: "Quel protocole est utilisé pour le transfert sécurisé des données sur le web ?", options: ["HTTPS", "FTP", "SMTP"], correct: "HTTPS" },
+      { text: "Que signifie CSS ?", options: ["Cascading Style Sheets", "Creative Style Syntax", "Computer Style Sheets"], correct: "Cascading Style Sheets" },
+      { text: "Quel est le format utilisé pour échanger des données légères entre systèmes ?", options: ["JSON", "XML", "HTML"], correct: "JSON" }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+    const feedback = [];
+
+    const questionContainer = document.getElementById("question-container");
+    const questionText = questionContainer.querySelector(".question");
+    const optionsContainer = questionContainer.querySelector(".options");
+    const nextBtn = document.getElementById("next-btn");
+    const resultDiv = document.getElementById("result");
+    const tryAgainBtn = document.getElementById("try-again-btn");
+    const feedbackDropdown = document.getElementById("feedback-dropdown");
+
+    function loadQuestion() {
+      const currentQuestion = questions[currentQuestionIndex];
+      questionText.textContent = `${currentQuestionIndex + 1}. ${currentQuestion.text}`;
+      optionsContainer.innerHTML = "";
+      currentQuestion.options.forEach(option => {
+        const label = document.createElement("label");
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "answer";
+        input.value = option;
+        label.appendChild(input);
+        label.append(option);
+        optionsContainer.appendChild(label);
+      });
+    }
+
+    function checkAnswer() {
+      const selectedOption = document.querySelector('input[name="answer"]:checked');
+      if (!selectedOption) {
+        alert("Please select an option before proceeding.");
+        return false;
+      }
+      const isCorrect = selectedOption.value === questions[currentQuestionIndex].correct;
+      feedback.push({
+        question: questions[currentQuestionIndex].text,
+        correct: isCorrect ? "Correct" : "Incorrect",
+        selected: selectedOption.value,
+      });
+      if (isCorrect) {
+        score++;
+      }
+      return true;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (!checkAnswer()) return;
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+      } else {
+        displayResult();
+      }
+    });
+
+    function displayResult() {
+      questionContainer.style.display = "none";
+      nextBtn.style.display = "none";
+      resultDiv.style.display = "block";
+      tryAgainBtn.style.display = "block";
+      feedbackDropdown.style.display = "block";
+      resultDiv.innerHTML = `Your score is ${score}/${questions.length}.`;
+
+      feedbackDropdown.innerHTML = feedback.map((item, index) => `
+        <option>
+          Question ${index + 1}: ${item.question} - ${item.correct} (Your answer: ${item.selected})
+        </option>`).join('');
+    }
+
+    tryAgainBtn.addEventListener("click", () => {
+      currentQuestionIndex = 0;
+      score = 0;
+      feedback.length = 0;
+      resultDiv.style.display = "none";
+      tryAgainBtn.style.display = "none";
+      feedbackDropdown.style.display = "none";
+      questionContainer.style.display = "block";
+      nextBtn.style.display = "block";
+      loadQuestion();
+    });
+
+    // Load the first question
+    loadQuestion();
+  </script>
+</body>
+
+</html>

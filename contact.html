@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Contact - Mohamed Ben Mannaa</title>
+  <style>
+     .contact-form {
+      margin-top: 50px;
+      text-align: center;
+      width: 650px;
+    }
+
+    .contact-form h2 {
+      font-size: 3rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .contact-form form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px 15px;
+      font-size: 1.3rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: crimson;
+      box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+    }
+
+    .form-group button {
+      padding: 20px 25px;
+      background-color: crimson;
+      color: white;
+      font-size: 1.7rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .form-group button:hover {
+      background-color: #800303;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="index.html">
+            <h1><span>M</span>ohamed <span>Ben </span>Mannaa</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="index.html" data-after="Home">Home</a></li>
+            <li><a href="course.html" data-after="Course">Course</a></li>
+            <li><a href="skills.html" data-after="Course">Skills</a></li>
+            <li><a href="about.html" data-after="About">About</a></li>
+            <li><a href="contact.html" data-after="Contact">Contact</a></li>
+            <li><a href="experience.html" data-after="Contact">Experience</a></li>
+            <li><a href="quiz.html" data-after="Contact">Quiz</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact container">
+      <div>
+        <h1 class="section-title">Contact <span>Info</span></h1>
+      </div>
+      <div class="contact-items">
+        <!-- Phone -->
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
+          <div class="contact-info">
+            <h1>Phone</h1>
+            <h2>+216 28 423 075</h2>
+          </div>
+        </div>
+        <!-- Email -->
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
+          <div class="contact-info">
+            <h1>Email</h1>
+            <h2>mohamedbenmannaa0@gmail.com</h2>
+          </div>
+        </div>
+        <!-- Address -->
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
+          <div class="contact-info">
+            <h1>Address</h1>
+            <h2>Sfax,  Tunis </h2>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div>
+          <h1 class="section-title">Contact <span>me</span></h1>
+        </div>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <input type="text" name="subject" placeholder="Subject" />
+          </div>
+          <div class="form-group">
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1><span>M</span>ohamed <span>Ben</span> Mannaa</h1>
+      </div>
+      <h2>Your Complete Web Solution</h2>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/behance.png" /></a>
+        </div>
+      </div>
+      <p>Copyright © 2024 . All rights reserved</p>
+    </div>
+  </section>
+  <!-- End Footer -->
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
